@@ -34,15 +34,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex flex-col items-center leading-none">
-              <span className="font-serif text-3xl text-brand-pink font-semibold tracking-wide group-hover:text-brand-pink-light transition-colors">
-                Bloom
-              </span>
-              <span className="font-sans text-xs tracking-[0.3em] text-brand-green font-medium uppercase mt-1">
-                Café
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img src="/logo.png" alt="Bloom Cafe" className="h-12 md:h-14 w-auto object-contain group-hover:opacity-80 transition-opacity" />
           </Link>
 
           {/* Desktop Nav */}

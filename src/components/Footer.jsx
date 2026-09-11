@@ -9,15 +9,9 @@ export default function Footer() {
           
           {/* Brand & Story */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <Link to="/" className="flex flex-col items-center md:items-start leading-none mb-4">
-              <span className="font-serif text-3xl text-brand-pink font-semibold tracking-wide">
-                Bloom
-              </span>
-              <span className="font-sans text-xs tracking-[0.3em] text-brand-green font-medium uppercase mt-1">
-                Café
-              </span>
+            <Link to="/" className="mb-6 hover:opacity-80 transition-opacity">
+              <img src="/logo.png" alt="Bloom Cafe" className="h-20 w-auto object-contain" />
             </Link>
-            <p className="font-script text-2xl text-brand-gold mb-4">coffee & more</p>
             <p className="text-brand-beige/70 text-sm max-w-xs leading-relaxed">
               A cozy sanctuary where every cup is crafted with love, and every moment blooms into a beautiful memory.
             </p>

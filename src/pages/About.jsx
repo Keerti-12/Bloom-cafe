@@ -3,9 +3,9 @@ export default function About() {
     <div className="py-24 bg-brand-beige min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
+          <img src="/logo.png" alt="Bloom Cafe" className="h-32 md:h-40 w-auto object-contain mb-8 drop-shadow-sm" />
           <h1 className="font-serif text-5xl text-brand-text mb-4">About Bloom Café</h1>
-          <p className="font-script text-3xl text-brand-pink">coffee & more</p>
         </div>
 
         <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm mb-16 relative overflow-hidden">
