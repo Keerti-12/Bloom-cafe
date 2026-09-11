@@ -19,15 +19,15 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center pt-16">
           <span className="font-sans text-xs sm:text-sm tracking-[0.2em] uppercase text-brand-text mb-6 font-medium">Welcome to Bloom</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-text mb-6">A little bloom in every moment.</h1>
-          <p className="font-sans text-base md:text-lg text-brand-text-light max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-brand-text-beige max-w-3xl mx-auto mb-10 leading-relaxed">
             Experience the harmony of artisanal coffee and botanical beauty in our cozy sanctuary. 
             A place to pause, reflect, and enjoy the sweeter things in life.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
-            <Link to="/menu" className="px-8 py-4 bg-brand-pink text-white font-sans uppercase tracking-wider text-xs hover:bg-brand-pink-light hover:text-brand-text transition-colors duration-300">
+            <Link to="/menu" className="px-8 py-4 bg-red-500 text-white font-sans uppercase tracking-wider text-xs hover:bg-brand-text hover:text-brand-beige transition-colors duration-300">
               Explore Menu
             </Link>
-            <Link to="/contact" className="px-8 py-4 border border-brand-text text-brand-text font-sans uppercase tracking-wider text-xs hover:bg-brand-text hover:text-brand-beige transition-colors duration-300">
+            <Link to="/menu" className="px-8 py-4 bg-red-500 text-white font-sans uppercase tracking-wider text-xs hover:bg-brand-text hover:text-brand-beige transition-colors duration-300">
               Visit Us
             </Link>
           </div>
