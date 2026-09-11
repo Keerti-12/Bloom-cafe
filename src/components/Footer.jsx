@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand & Story */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="mb-6 hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="Bloom Cafe" className="h-20 w-auto object-contain" />
+              <img src="/logo.png" alt="Bloom Cafe" className="h-20 w-20 object-cover rounded-full shadow-sm" />
             </Link>
             <p className="text-brand-beige/70 text-sm max-w-xs leading-relaxed">
               A cozy sanctuary where every cup is crafted with love, and every moment blooms into a beautiful memory.

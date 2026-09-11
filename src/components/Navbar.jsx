@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img src="/logo.png" alt="Bloom Cafe" className="h-12 md:h-14 w-auto object-contain group-hover:opacity-80 transition-opacity" />
+            <img src="/logo.png" alt="Bloom Cafe" className="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full group-hover:opacity-80 transition-opacity shadow-sm" />
           </Link>
 
           {/* Desktop Nav */}

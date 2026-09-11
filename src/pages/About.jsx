@@ -4,7 +4,7 @@ export default function About() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16 flex flex-col items-center">
-          <img src="/logo.png" alt="Bloom Cafe" className="h-32 md:h-40 w-auto object-contain mb-8 drop-shadow-sm" />
+          <img src="/logo.png" alt="Bloom Cafe" className="h-32 w-32 md:h-40 md:w-40 object-cover rounded-full mb-8 shadow-md" />
           <h1 className="font-serif text-5xl text-brand-text mb-4">About Bloom Café</h1>
         </div>
 
