@@ -3,13 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Coffee } from 'lucide-react';
 import { cn } from '../utils';
 
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Menu', path: '/menu' },
-  { name: 'About', path: '/about' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Contact', path: '/contact' },
-];
+import { navLinks } from '../data/navLinks';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

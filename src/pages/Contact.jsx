@@ -1,4 +1,6 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { contactInfo } from '../data/contactInfo';
+import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
   return (
@@ -15,31 +17,10 @@ export default function Contact() {
 
         <div className="flex flex-col lg:flex-row gap-16 max-w-5xl mx-auto">
           
-          {/* Contact Form (UI Only) */}
           <div className="flex-1">
-            <div className="bg-brand-beige p-8 md:p-10 rounded-xl shadow-sm">
-              <h3 className="font-serif text-2xl text-brand-text mb-6">Send us a message</h3>
-              <form className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm text-brand-text-light mb-2">Name</label>
-                  <input type="text" id="name" className="w-full px-4 py-3 bg-white border border-brand-text/10 rounded-md focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink transition-all" placeholder="Your name" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm text-brand-text-light mb-2">Email</label>
-                  <input type="email" id="email" className="w-full px-4 py-3 bg-white border border-brand-text/10 rounded-md focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink transition-all" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm text-brand-text-light mb-2">Message</label>
-                  <textarea id="message" rows="5" className="w-full px-4 py-3 bg-white border border-brand-text/10 rounded-md focus:outline-none focus:border-brand-pink focus:ring-1 focus:ring-brand-pink transition-all resize-none" placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="button" className="w-full py-4 bg-brand-pink text-white font-sans uppercase tracking-wider text-sm hover:bg-brand-pink-light hover:text-brand-text transition-colors duration-300 rounded-md mt-2">
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
 
-          {/* Info */}
           <div className="flex-1 space-y-10 lg:pt-8">
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 rounded-full bg-brand-beige flex items-center justify-center flex-shrink-0 text-brand-gold">
@@ -47,7 +28,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-serif text-xl text-brand-text mb-2">Location</h4>
-                <p className="text-brand-text-light leading-relaxed">123 Floral Avenue<br />Blossom District, City 12345</p>
+                <p className="text-brand-text-light leading-relaxed">{contactInfo.address.street}<br />{contactInfo.address.city}</p>
               </div>
             </div>
 
@@ -58,9 +39,9 @@ export default function Contact() {
               <div>
                 <h4 className="font-serif text-xl text-brand-text mb-2">Opening Hours</h4>
                 <ul className="text-brand-text-light space-y-1">
-                  <li>Monday - Friday: 7:00 AM - 6:00 PM</li>
-                  <li>Saturday: 8:00 AM - 7:00 PM</li>
-                  <li>Sunday: 8:00 AM - 5:00 PM</li>
+                  {contactInfo.hours.map((hour, index) => (
+                    <li key={index}>{hour.day}: {hour.time}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -71,7 +52,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-serif text-xl text-brand-text mb-2">Phone</h4>
-                <p className="text-brand-text-light">(555) 123-4567</p>
+                <p className="text-brand-text-light">{contactInfo.phone}</p>
               </div>
             </div>
 
@@ -81,7 +62,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-serif text-xl text-brand-text mb-2">Email</h4>
-                <p className="text-brand-text-light">hello@bloomcafe.com</p>
+                <p className="text-brand-text-light">{contactInfo.email}</p>
               </div>
             </div>
           </div>

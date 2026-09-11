@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Coffee, Leaf, Heart } from 'lucide-react';
+import { features } from '../data/features';
+import FeatureCard from '../components/FeatureCard';
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center pt-16">
           <span className="font-sans text-xs sm:text-sm tracking-[0.2em] uppercase text-brand-text mb-6 font-medium">Welcome to Bloom</span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-text mb-6">A little bloom in every moment.</h1>
-          <p className="font-sans text-base md:text-lg text-brand-text-beige max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-brand-text-light max-w-2xl mx-auto mb-10 leading-relaxed">
             Experience the harmony of artisanal coffee and botanical beauty in our cozy sanctuary. 
             A place to pause, reflect, and enjoy the sweeter things in life.
           </p>
@@ -38,21 +39,9 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div className="flex flex-col items-center">
-              <Coffee className="w-10 h-10 text-brand-gold mb-6" strokeWidth={1} />
-              <h3 className="font-serif text-2xl text-brand-text mb-4">Artisanal Coffee</h3>
-              <p className="text-brand-text-light leading-relaxed text-sm">Carefully sourced beans, roasted to perfection and brewed with precision for the perfect cup.</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Leaf className="w-10 h-10 text-brand-green mb-6" strokeWidth={1} />
-              <h3 className="font-serif text-2xl text-brand-text mb-4">Botanical Setting</h3>
-              <p className="text-brand-text-light leading-relaxed text-sm">Surround yourself with our curated selection of indoor plants and subtle floral aesthetics.</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Heart className="w-10 h-10 text-brand-pink mb-6" strokeWidth={1} />
-              <h3 className="font-serif text-2xl text-brand-text mb-4">Made with Love</h3>
-              <p className="text-brand-text-light leading-relaxed text-sm">Freshly baked pastries and heartfelt service to make every visit truly memorable.</p>
-            </div>
+            {features.map(feature => (
+              <FeatureCard key={feature.id} feature={feature} />
+            ))}
           </div>
         </div>
       </section>

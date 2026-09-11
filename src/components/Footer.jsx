@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { contactInfo } from '../data/contactInfo';
+import { navLinks } from '../data/navLinks';
 
 export default function Footer() {
   return (
@@ -23,15 +25,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-brand-beige/80">
               <li className="flex items-center gap-3">
                 <MapPin size={16} className="text-brand-gold flex-shrink-0" />
-                <span>123 Floral Avenue, Blossom District</span>
+                <span>{contactInfo.address.street}, {contactInfo.address.city}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-brand-gold flex-shrink-0" />
-                <span>(555) 123-4567</span>
+                <span>{contactInfo.phone}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-brand-gold flex-shrink-0" />
-                <span>hello@bloomcafe.com</span>
+                <span>{contactInfo.email}</span>
               </li>
             </ul>
           </div>
@@ -40,23 +42,17 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-serif text-xl text-brand-pink-light mb-6">Opening Hours</h4>
             <ul className="space-y-3 text-sm text-brand-beige/80">
-              <li className="flex justify-between w-48 border-b border-brand-beige/10 pb-2">
-                <span>Mon - Fri</span>
-                <span>7:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between w-48 border-b border-brand-beige/10 pb-2">
-                <span>Saturday</span>
-                <span>8:00 AM - 7:00 PM</span>
-              </li>
-              <li className="flex justify-between w-48 border-b border-brand-beige/10 pb-2">
-                <span>Sunday</span>
-                <span>8:00 AM - 5:00 PM</span>
-              </li>
+              {contactInfo.hours.map((hour, index) => (
+                <li key={index} className="flex justify-between w-48 border-b border-brand-beige/10 pb-2">
+                  <span>{hour.day}</span>
+                  <span>{hour.time}</span>
+                </li>
+              ))}
             </ul>
             <div className="flex gap-6 mt-6 text-sm font-sans tracking-widest text-brand-beige/60">
-              <a href="#" className="hover:text-brand-pink transition-colors">IG</a>
-              <a href="#" className="hover:text-brand-pink transition-colors">FB</a>
-              <a href="#" className="hover:text-brand-pink transition-colors">X</a>
+              {contactInfo.socials.map((social, index) => (
+                <a key={index} href={social.link} className="hover:text-brand-pink transition-colors">{social.label}</a>
+              ))}
             </div>
           </div>
         </div>
@@ -64,8 +60,11 @@ export default function Footer() {
         <div className="border-t border-brand-beige/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-beige/50">
           <p>&copy; {new Date().getFullYear()} Bloom Café. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-brand-beige transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-beige transition-colors">Terms of Service</a>
+            {navLinks.map((link) => (
+              <Link key={link.name} to={link.path} className="hover:text-brand-beige transition-colors">
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
